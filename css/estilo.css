@@ -1,0 +1,200 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis de cores */
+:root {
+  --cor-primaria: #6a1b9a;
+  --cor-secundaria: #ab47bc;
+  --cor-terciaria: #ce93d8;
+  --cor-quaternaria: #f3e5f5;
+}
+
+/* Body - layout geral */
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--cor-quaternaria);
+  color: #333;
+}
+
+/* Barra lateral de navegação pequena */
+nav {
+  width: 140px; /* barra menor */
+  background-color: var(--cor-primaria);
+  padding: 15px 10px;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  height: auto; /* só o tamanho do conteúdo */
+  position: fixed;
+  top: 20px;
+  left: 0;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+/* Título do menu */
+nav h3 {
+  color: white;
+  font-weight: 700;
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid var(--cor-secundaria);
+  padding-bottom: 8px;
+}
+
+/* Links do menu */
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+  writing-mode: horizontal-tb; /* texto normal */
+  transform: none; /* sem rotação */
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background-color: var(--cor-secundaria);
+  color: white;
+}
+
+/* Área principal do conteúdo, com margem para nav */
+.main-content {
+  margin-left: 140px; /* espaço para nav menor */
+  padding: 20px 40px;
+  width: calc(100% - 140px);
+}
+
+/* Faixa superior cabeçalho */
+.header-bar {
+  background-color: var(--cor-primaria);
+  color: white;
+  padding: 15px 20px;
+  font-size: 1.8em;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+/* Blocos de conteúdo */
+.bloco {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Bloco hobbies */
+#bloco-hobbys ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 1.1em;
+}
+
+.foto01 {
+  width: 300px; 
+  border-radius: 50%;
+  border: 3px solid var(--cor-secundaria);
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Lista lateral dos presentes e cantores */
+.lista-lado-a-lado {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Itens de presentes e cantores */
+.presentes-item,
+.cantores-item {
+  background-color: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+  width: 200px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.presentes-item:hover,
+.cantores-item:hover {
+  transform: scale(1.05);
+}
+
+/* Imagens dentro dos itens */
+.presentes-item img,
+.cantores-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Links nos nomes dos cantores */
+.cantores-item a {
+  text-decoration: none;
+  color: var(--cor-primaria);
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.cantores-item a:hover {
+  color: var(--cor-secundaria);
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+  nav {
+    width: 100px;
+    padding: 10px 5px;
+  }
+
+  nav h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+
+  nav a {
+    font-size: 1em;
+    padding: 5px 8px;
+  }
+
+  .main-content {
+    margin-left: 100px;
+    padding: 15px 20px;
+    width: calc(100% - 100px);
+  }
+
+  .lista-lado-a-lado {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .presentes-item,
+  .cantores-item {
+    width: 90%;
+  }
+}
