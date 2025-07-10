@@ -1,11 +1,9 @@
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Variáveis de cores */
 :root {
   --cor-primaria: #6a1b9a;
   --cor-secundaria: #ab47bc;
@@ -13,18 +11,17 @@
   --cor-quaternaria: #f3e5f5;
 }
 
-/* Body - layout geral */
 body {
   font-family: 'Arial', sans-serif;
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
   background-color: var(--cor-quaternaria);
   color: #333;
 }
 
-/* Barra lateral de navegação pequena */
 nav {
-  width: 140px; /* barra menor */
+  width: 140px; 
   background-color: var(--cor-primaria);
   padding: 15px 10px;
   border-radius: 0 8px 8px 0;
@@ -32,7 +29,7 @@ nav {
   flex-direction: column;
   align-items: flex-start;
   gap: 18px;
-  height: auto; /* só o tamanho do conteúdo */
+  height: auto; 
   position: fixed;
   top: 20px;
   left: 0;
@@ -40,7 +37,6 @@ nav {
   z-index: 10;
 }
 
-/* Título do menu */
 nav h3 {
   color: white;
   font-weight: 700;
@@ -52,14 +48,13 @@ nav h3 {
   padding-bottom: 8px;
 }
 
-/* Links do menu */
 nav a {
   color: white;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1em;
-  writing-mode: horizontal-tb; /* texto normal */
-  transform: none; /* sem rotação */
+  writing-mode: horizontal-tb; 
+  transform: none; 
   width: 100%;
   padding: 5px 10px;
   border-radius: 6px;
@@ -71,14 +66,12 @@ nav a:hover {
   color: white;
 }
 
-/* Área principal do conteúdo, com margem para nav */
 .main-content {
-  margin-left: 140px; /* espaço para nav menor */
+  margin-left: 140px; 
   padding: 20px 40px;
   width: calc(100% - 140px);
 }
 
-/* Faixa superior cabeçalho */
 .header-bar {
   background-color: var(--cor-primaria);
   color: white;
@@ -90,7 +83,7 @@ nav a:hover {
   margin-bottom: 30px;
 }
 
-/* Blocos de conteúdo */
+
 .bloco {
   background-color: white;
   padding: 25px;
@@ -102,7 +95,6 @@ nav a:hover {
   margin-right: auto;
 }
 
-/* Bloco hobbies */
 #bloco-hobbys ul {
   list-style-type: disc;
   padding-left: 20px;
@@ -119,7 +111,6 @@ nav a:hover {
   margin-right: auto;
 }
 
-/* Lista lateral dos presentes e cantores */
 .lista-lado-a-lado {
   display: flex;
   justify-content: center;
@@ -127,7 +118,6 @@ nav a:hover {
   flex-wrap: wrap;
 }
 
-/* Itens de presentes e cantores */
 .presentes-item,
 .cantores-item {
   background-color: white;
@@ -144,16 +134,15 @@ nav a:hover {
   transform: scale(1.05);
 }
 
-/* Imagens dentro dos itens */
 .presentes-item img,
 .cantores-item img {
   width: 100%;
-  height: auto;
+  height: 200px; 
+  object-fit: cover; 
   border-radius: 10px;
   margin-bottom: 10px;
 }
 
-/* Links nos nomes dos cantores */
 .cantores-item a {
   text-decoration: none;
   color: var(--cor-primaria);
@@ -165,7 +154,6 @@ nav a:hover {
   color: var(--cor-secundaria);
 }
 
-/* Responsividade para telas pequenas */
 @media (max-width: 600px) {
   nav {
     width: 100px;
@@ -197,4 +185,32 @@ nav a:hover {
   .cantores-item {
     width: 90%;
   }
+}
+
+.rodape {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--cor-primaria);
+  color: white;
+  margin-top: 50px;
+  border-top: 3px solid var(--cor-secundaria);
+}
+
+.rodape .insta-link {
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+  font-weight: bold;
+  gap: 8px;
+}
+
+.rodape .insta-link:hover {
+  color: var(--cor-terciaria);
+}
+
+.insta-logo {
+  width: 20px;
+  height: 20px;
 }
